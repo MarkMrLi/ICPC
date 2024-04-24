@@ -2,7 +2,7 @@
 
 using namespace std;
 typedef long long ll;
-
+template
 const int N = 2e3;
 int prime[N];
 bool is_prime[N];
