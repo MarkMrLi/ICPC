@@ -13,45 +13,43 @@ void solve() {
         cin>>p[i];
         if(p[i] == x)now_ind = i;
     }
-    if(n > 2)
+    if(n)
     {
         int k = 0;
         int i1,j1,i2,j2;
-        if(p[(n+2)/2] <= x)
-        {
-            k++;
-            i1 = now_ind;
-            j1 = (n+2)/2 - 1;
-            now_ind = j1;
-        }
-        else
-        {
-            i1 = now_ind;
-            j1 = (n + 2)/2;
-            now_ind = j1;
-        }
+        // if(p[(n+2)/2] <= x)
+        // {
+        //     k++;
+        //     i1 = now_ind;
+        //     j1 = (n+2)/2 - 1;
+        //     now_ind = j1;
+        // }
+        // else
+        // {
+        //     i1 = now_ind;
+        //     j1 = (n + 2)/2;
+        //     now_ind = j1;
+        // }
         int l = 1,r = n + 1;
-        while(r - l != 1)
+        while(r - l > 1)
         {
             int mid = (r + l)/2;
             if(p[mid] <= x)l = mid;
             else r = mid;
         }
-        i2 = now_ind;
-        j2 = l;
-        cout<<2<<endl<<i1<<" "<<j1<<endl<<i2<<" "<<j2<<endl;
+        cout<<1<<endl<<now_ind<<" "<<l<<endl;
     }
-    else if(n == 1)
-    {
-        cout<<0<<endl;
-    }
-    else if(n == 2)
-    {
-        if(now_ind)
-        cout<<1<<endl<<now_ind<<1<<endl;
-        else
-        cout<<0<<endl;
-    }
+    // else if(n == 1)
+    // {
+    //     cout<<0<<endl;
+    // }
+    // else if(n == 2)
+    // {
+    //     if(now_ind)
+    //     cout<<1<<endl<<now_ind<<1<<endl;
+    //     else
+    //     cout<<0<<endl;
+    // }
     
     return;
 }
